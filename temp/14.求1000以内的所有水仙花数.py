@@ -4,4 +4,3 @@ while num < 1000:
     if num == (num % 10) ** 3 + ((num // 10) % 10) ** 3 + (num // 100) ** 3:
         print(num, end=' ')
     num += 1
-
