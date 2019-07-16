@@ -4,6 +4,8 @@
 #
 # **题解：**申请奇数数组和偶数数组，分别存放奇数值和偶数值，数组相加便为结果
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def reOrderArray(self, array):
         # write code here
