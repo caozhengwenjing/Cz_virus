@@ -5,8 +5,6 @@
 #               递归遍历左子树和右子树的值。
 
 # -*- coding:utf-8 -*-
-
-
 class Solution:
     def VerifySquenceOfBST(self, sequence):
         # write code here
