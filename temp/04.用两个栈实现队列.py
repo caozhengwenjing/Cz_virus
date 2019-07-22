@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def __init__(self):
         self.Stack1 = []
