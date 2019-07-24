@@ -6,22 +6,24 @@
 #           你会不会被他忽悠住？(子向量的长度至少是1)
 
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def FindGreatestSumOfSubArray(self, array):
         # write code here
-        maxsum,tempsum=array[0],array[0]
-        for i in range(1,len(array)):
-            if tempsum<0:
-                tempsum=array[i]
+        maxsum, tempsum = array[0], array[0]
+        for i in range(1, len(array)):
+            if tempsum < 0:
+                tempsum = array[i]
             else:
                 tempsum = tempsum + array[i]
-            if tempsum>maxsum:
-                maxsum=tempsum
+            if tempsum > maxsum:
+                maxsum = tempsum
         return maxsum
 
-if __name__=='__main__':
-    array=list(map(int,input().split(',')))
-    solution=Solution()
-    ans=solution.FindGreatestSumOfSubArray(array)
-    print(ans)
 
+if __name__ == '__main__':
+    array = list(map(int, input().split(',')))
+    solution = Solution()
+    ans = solution.FindGreatestSumOfSubArray(array)
+    print(ans)
