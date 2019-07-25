@@ -6,6 +6,8 @@
 #           你会不会被他忽悠住？(子向量的长度至少是1)
 
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def FindGreatestSumOfSubArray(self, array):
         # write code here
