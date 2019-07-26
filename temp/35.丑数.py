@@ -4,6 +4,8 @@
 # **思路：**每一个丑数必然是由之前的某个丑数与2，3或5的乘积得到的，这样下一个丑数就用之前的丑数分别乘以2，3，5，
 #         找出这三这种最小的并且大于当前最大丑数的值，即为下一个要求的丑数。
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def GetUglyNumber_Solution(self, index):
         # write code here
