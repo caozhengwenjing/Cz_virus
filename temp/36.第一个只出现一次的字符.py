@@ -33,7 +33,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    s = 'abbsdda'
+    s = 'rray'
     solution = Solution()
     ans = solution.FirstNotRepeatingChar(s)
     print(ans)
