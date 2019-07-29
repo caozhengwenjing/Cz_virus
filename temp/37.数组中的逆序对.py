@@ -44,8 +44,9 @@ class Solution:
         A(data)
         return count % 1000000007
 
-if __name__=='__main__':
-    data=[1,2,3,4,5,7,0]
-    solution=Solution()
-    ans=solution.InversePairs(data)
+
+if __name__ == '__main__':
+    data = [1, 2, 3, 4, 5, 7, 0]
+    solution = Solution()
+    ans = solution.InversePairs(data)
     print(ans)
