@@ -3,8 +3,6 @@
 # **思路：**找出所有出现一次的字符，然后进行遍历找到第一次出现字符的位置。
 
 # -*- coding:utf-8 -*-
-
-
 class Solution:
     def FirstNotRepeatingChar(self, s):
         # write code here
