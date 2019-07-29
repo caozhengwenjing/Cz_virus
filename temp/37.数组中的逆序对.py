@@ -46,7 +46,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    data = [1, 2, 3, 4, 5, 7, 0]
+    data = [1, 2, 3, 4, 5, 6, 7, 0]
     solution = Solution()
     ans = solution.InversePairs(data)
     print(ans)
