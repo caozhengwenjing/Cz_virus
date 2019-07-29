@@ -13,6 +13,8 @@
 # 输出 7
 
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def InversePairs(self, data):
         # write code here
