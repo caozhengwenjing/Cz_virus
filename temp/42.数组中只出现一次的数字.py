@@ -2,6 +2,8 @@
 #
 # **题解：**将数组中数转到set之中，然后利用dict存储每个数字出现的次数。
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     # 返回[a,b] 其中ab是出现一次的两个数字
     def FindNumsAppearOnce(self, array):
