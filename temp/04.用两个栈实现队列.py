@@ -1,3 +1,7 @@
+# **题目：**用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+#
+# **题解：**申请两个栈Stack1和Stack2，Stack1当作输入，Stack2当作pop。当Stack2空的时候，将Stack1进行反转，并且输入到Stack2。
+
 # -*- coding:utf-8 -*-
 
 
