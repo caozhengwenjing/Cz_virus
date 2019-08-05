@@ -8,6 +8,8 @@
 # **思路：**首项加尾项*2等于和，那么只要遍历项的开始和长度即可。
 
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def FindContinuousSequence(self, tsum):
         # write code here
