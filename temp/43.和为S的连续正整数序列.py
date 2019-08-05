@@ -11,21 +11,22 @@
 class Solution:
     def FindContinuousSequence(self, tsum):
         # write code here
-        ans=[]
-        for i in range(1,tsum//2+1):
-            oneans=[]
-            for k in range(1,tsum):
-                tempsum=((i+i+k-1)*k)//2
-                if tempsum==tsum:
-                    for j in range(i,i+k):
+        ans = []
+        for i in range(1, tsum // 2 + 1):
+            oneans = []
+            for k in range(1, tsum):
+                tempsum = ((i + i + k - 1) * k) // 2
+                if tempsum == tsum:
+                    for j in range(i, i + k):
                         oneans.append(j)
                     break
-            if oneans !=[]:
+            if oneans != []:
                 ans.append(oneans)
         return ans
 
-if __name__=='__main__':
-    tsum=15
-    solution=Solution()
-    ans=solution.FindContinuousSequence(tsum)
+
+if __name__ == '__main__':
+    tsum = 15
+    solution = Solution()
+    ans = solution.FindContinuousSequence(tsum)
     print(ans)
