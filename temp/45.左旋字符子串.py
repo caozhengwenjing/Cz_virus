@@ -15,7 +15,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    s = 'abcdefg'
+    s = 'banner'
     n = 3
     solution = Solution()
     ans = solution.LeftRotateString(s, n)
