@@ -5,15 +5,16 @@
 class Solution:
     def LeftRotateString(self, s, n):
         # write code here
-        if s=='' and n==0:
+        if s == '' and n == 0:
             return ''
-        ans=''
-        ans=s[n:]+s[0:n]
+        ans = ''
+        ans = s[n:] + s[0:n]
         return ans
 
-if __name__=='__main__':
-    s='abcdefg'
-    n=3
-    solution=Solution()
-    ans=solution.LeftRotateString(s,n)
+
+if __name__ == '__main__':
+    s = 'abcdefg'
+    n = 3
+    solution = Solution()
+    ans = solution.LeftRotateString(s, n)
     print(ans)
