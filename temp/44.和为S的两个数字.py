@@ -5,6 +5,8 @@
 #
 # **思路：**利用i和j从后面进行扫描结果，选取最小的乘积放入到结果集之中。
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def FindNumbersWithSum(self, array, tsum):
         # write code here
