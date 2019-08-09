@@ -26,7 +26,6 @@ class Solution:
             else:
                 diff = numbers[i] - numbers[i - 1] - 1
                 zero = zero - diff
-
         if zero < 0:
             return False
         return True
