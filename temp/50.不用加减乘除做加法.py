@@ -6,15 +6,16 @@
 class Solution:
     def Add(self, num1, num2):
         # write code here
-        while num2!=0:
-            sum=num1^num2
-            carry=(num1&num2)<<1
-            num1=sum
-            num2=carry
+        while num2 != 0:
+            sum = num1 ^ num2
+            carry = (num1 & num2) << 1
+            num1 = sum
+            num2 = carry
         return num1
 
-if __name__=='__main__':
-    num1,num2=10,500000
-    solution=Solution()
-    ans=solution.Add(num1,num2)
+
+if __name__ == '__main__':
+    num1, num2 = 10, 500000
+    solution = Solution()
+    ans = solution.Add(num1, num2)
     print(ans)
