@@ -6,12 +6,13 @@
 class Solution:
     def Sum_Solution(self, n):
         # write code here
-        if n==0:
+        if n == 0:
             return 0
-        return self.Sum_Solution(n-1)+n
+        return self.Sum_Solution(n - 1) + n
 
-if __name__=='__main__':
-    n=6
-    solution=Solution()
-    ans=solution.Sum_Solution(n)
+
+if __name__ == '__main__':
+    n = 6
+    solution = Solution()
+    ans = solution.Sum_Solution(n)
     print(ans)
