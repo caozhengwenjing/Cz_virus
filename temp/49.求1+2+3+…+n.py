@@ -3,6 +3,8 @@
 # **思路：**利用递归当作计算结果。
 
 # -*- coding:utf-8 -*-
+
+
 class Solution:
     def Sum_Solution(self, n):
         # write code here
