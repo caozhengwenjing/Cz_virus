@@ -10,23 +10,23 @@ class Solution:
     # 函数返回True/False
     def duplicate(self, numbers, duplication):
         # write code here
-        numset=set(numbers)
-        dict={}
+        numset = set(numbers)
+        dict = {}
         duplication.append(0)
         for val in numbers:
-            dict[val]=0
-        for i in range(0,len(numbers)):
-            dict[numbers[i]]=dict[numbers[i]]+1
+            dict[val] = 0
+        for i in range(0, len(numbers)):
+            dict[numbers[i]] = dict[numbers[i]] + 1
         for val in numset:
-            if dict[val]>1:
-                duplication[0]=val
+            if dict[val] > 1:
+                duplication[0] = val
                 return True
         return False
 
-if __name__=='__main__':
-    numbers=[2,1,1,2,4]
-    solution=Solution()
-    duplication=[]
-    ans=solution.duplicate(numbers,duplication)
-    print(ans)
 
+if __name__ == '__main__':
+    numbers = [2, 1, 1, 2, 4]
+    solution = Solution()
+    duplication = []
+    ans = solution.duplicate(numbers, duplication)
+    print(ans)
