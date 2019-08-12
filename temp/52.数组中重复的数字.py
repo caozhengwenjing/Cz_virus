@@ -27,7 +27,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    numbers = [2, 1, 1, 2, 4]
+    numbers = [2, 1, 3, 1, 4]
     solution = Solution()
     duplication = []
     ans = solution.duplicate(numbers, duplication)
