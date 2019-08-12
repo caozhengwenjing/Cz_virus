@@ -30,8 +30,9 @@ class Solution:
             return -a
         return a
 
-if __name__=='__main__':
-    s='115'
-    solution=Solution()
-    ans=solution.StrToInt(s)
+
+if __name__ == '__main__':
+    s = '115'
+    solution = Solution()
+    ans = solution.StrToInt(s)
     print(ans)
