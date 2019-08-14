@@ -36,9 +36,10 @@ class Solution:
             return self.match(s[1:], pattern[1:])
         return False
 
-if __name__=='__main__':
-    solution=Solution()
-    s='aaa'
-    pattern='a*a.a'
-    ans=solution.match(s,pattern)
+
+if __name__ == '__main__':
+    solution = Solution()
+    s = 'aaa'
+    pattern = 'a*a.a'
+    ans = solution.match(s, pattern)
     print(ans)
