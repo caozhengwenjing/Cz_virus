@@ -7,33 +7,34 @@ class Solution:
     def isNumeric(self, s):
         # write code here
         # 标记符号、小数点、e是否出现过
-        sign,decimal,hasE=False,False,False
-        for i in range(0,len(s)):
-            if s[i]=='e' or s[i]=='E':
-                if i==len(s)-1:# e后面一定要接数字
+        sign, decimal, hasE = False, False, False
+        for i in range(0, len(s)):
+            if s[i] == 'e' or s[i] == 'E':
+                if i == len(s) - 1:  # e后面一定要接数字
                     return False
-                if hasE==True:# 不能出现两次e
+                if hasE == True:  # 不能出现两次e
                     return False
-                hasE=True
-            elif s[i]=='+' or s[i]=='-':
-                #第二次出现+或-一定要在e之后
-                if sign and s[i-1]!='e' and s[i-1]!='E':
+                hasE = True
+            elif s[i] == '+' or s[i] == '-':
+                # 第二次出现+或-一定要在e之后
+                if sign and s[i - 1] != 'e' and s[i - 1] != 'E':
                     return False
                 # 第一次出现+或-，如果不是出现在字符最前面，那么就要出现在e或者E后面
-                if sign==False and i>0 and s[i-1]!='e' and s[i-1]!='E':
+                if sign == False and i > 0 and s[i - 1] != 'e' and s[i - 1] != 'E':
                     return False
-                sign=True
-            elif s[i]=='.':
+                sign = True
+            elif s[i] == '.':
                 # e后面不能出现小数点，小数点不能出现两次
                 if decimal or hasE:
                     return False
-                decimal=True
-            elif s[i]>'9' or s[i]<'0':
+                decimal = True
+            elif s[i] > '9' or s[i] < '0':
                 return False
         return True
 
-if __name__=='__main__':
-    solution=Solution()
-    s='123e.1416'
-    ans=solution.isNumeric(s)
+
+if __name__ == '__main__':
+    solution = Solution()
+    s = '123e.1416'
+    ans = solution.isNumeric(s)
     print(ans)
