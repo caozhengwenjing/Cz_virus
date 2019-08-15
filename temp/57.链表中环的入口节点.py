@@ -7,44 +7,47 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
+
 class Solution:
     def EntryNodeOfLoop(self, pHead):
         # write code here
         if pHead is None:
             return None
-        num,dict,flag=[],{},True
-        tempans=0
-        while pHead and flag==True:
+        num, dict, flag = [], {}, True
+        tempans = 0
+        while pHead and flag == True:
             num.append(pHead.val)
-            numset=set(num)
+            numset = set(num)
             for c in numset:
-                dict[c]=0
+                dict[c] = 0
             for c in num:
-                dict[c]=dict[c]+1
+                dict[c] = dict[c] + 1
             for c in num:
-                if dict[c]>1:
-                    flag=False
-                    tempans=c
-            pHead=pHead.next
+                if dict[c] > 1:
+                    flag = False
+                    tempans = c
+            pHead = pHead.next
         while pHead:
-            if pHead.val==tempans:
+            if pHead.val == tempans:
                 return pHead
-            pHead=pHead.next
+            pHead = pHead.next
         return None
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     pHead1 = ListNode(1)
     pHead2 = ListNode(2)
     pHead3 = ListNode(3)
     pHead4 = ListNode(4)
     pHead5 = ListNode(5)
 
-    pHead1.next=pHead2
-    pHead2.next=pHead3
-    pHead3.next=pHead4
-    pHead4.next=pHead5
-    pHead5.next=pHead1
+    pHead1.next = pHead2
+    pHead2.next = pHead3
+    pHead3.next = pHead4
+    pHead4.next = pHead5
+    pHead5.next = pHead1
 
-    solution=Solution()
-    ans=solution.EntryNodeOfLoop(pHead1)
+    solution = Solution()
+    ans = solution.EntryNodeOfLoop(pHead1)
     print(ans.val)
