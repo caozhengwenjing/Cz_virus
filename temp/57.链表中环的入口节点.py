@@ -3,6 +3,8 @@
 # **思路：**把链表中节点值放到dict数组中，并记录出现的次数，如果出现次数超过一次，则为环的入口节点。
 
 # -*- coding:utf-8 -*-
+
+
 class ListNode:
     def __init__(self, x):
         self.val = x
