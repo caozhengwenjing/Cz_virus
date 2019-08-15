@@ -1,3 +1,5 @@
+01.替换空格
+```python
 class Solution:
     # s 源字符串
     def replaceSpace(self, s):
@@ -11,4 +13,6 @@ if __name__ == '__main__':
     solution = Solution()
     ans = solution.replaceSpace(s)
     print(ans)
+
+```
 
