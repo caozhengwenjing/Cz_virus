@@ -4,6 +4,8 @@
 # **思路：**记录链表中出现的数字，然后构建新链表。
 
 # -*- coding:utf-8 -*-
+
+
 class ListNode:
     def __init__(self, x):
         self.val = x
