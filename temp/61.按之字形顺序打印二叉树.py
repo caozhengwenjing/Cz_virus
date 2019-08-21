@@ -4,6 +4,8 @@
 # 思路： 把当前列结果存放到list之中，设置翻转变量，依次从左到右打印和从右到左打印。
 
 # -*- coding:utf-8 -*-
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
