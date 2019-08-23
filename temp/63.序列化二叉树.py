@@ -2,6 +2,8 @@
 #
 # **思路：**转变成前序遍历，空元素利用"#"代替，然后进行解序列。
 # -*- coding:utf-8 -*-
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
