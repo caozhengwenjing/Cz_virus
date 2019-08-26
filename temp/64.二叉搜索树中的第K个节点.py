@@ -8,27 +8,30 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
+
 class Solution:
     # 返回对应节点TreeNode
     def KthNode(self, pRoot, k):
         # write code here
-        res=[]
+        res = []
         if not pRoot:
             return None
-        self.order(pRoot,res)
-        if len(res)<k or k<=0:
+        self.order(pRoot, res)
+        if len(res) < k or k <= 0:
             return None
         else:
-            return res[k-1]
+            return res[k - 1]
 
-    def order(self,root,res):
+    def order(self, root, res):
         if not root:
             return
-        self.order(root.left,res)
+        self.order(root.left, res)
         res.append(root)
-        self.order(root.right,res)
+        self.order(root.right, res)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     A1 = TreeNode(5)
     A2 = TreeNode(3)
     A3 = TreeNode(7)
@@ -37,14 +40,14 @@ if __name__=='__main__':
     A6 = TreeNode(6)
     A7 = TreeNode(8)
 
-    A1.left=A2
-    A1.right=A3
-    A2.left=A4
-    A2.right=A5
-    A3.left=A6
-    A3.right=A7
+    A1.left = A2
+    A1.right = A3
+    A2.left = A4
+    A2.right = A5
+    A3.left = A6
+    A3.right = A7
 
-    k=3
+    k = 3
     solution = Solution()
-    ans=solution.KthNode(A1,k)
+    ans = solution.KthNode(A1, k)
     print(ans)
