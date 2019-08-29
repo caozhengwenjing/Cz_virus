@@ -4,3 +4,23 @@
 #       针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个：
 #       {[2,3,4],2,6,2,5,1}， {2,[3,4,2],6,2,5,1}， {2,3,[4,2,6],2,5,1}，
 #       {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}，{2,3,4,2,6,[2,5,1]}。
+# -*- coding:utf-8 -*-
+class Solution:
+    def maxInWindows(self, num, size):
+        # write code here
+        if size==0 or num==[]:
+            return []
+        res=[]
+        for i in range(0,len(num)-size+1):
+            tempnum=[]
+            for j in range(i,i+size):
+                tempnum.append(num[j])
+            res.append(max(tempnum))
+        return res
+
+if __name__=="__main__":
+    solution=Solution()
+    num=[2,3,4,2,6,2,5,1]
+    size=3
+    ans=solution.maxInWindows(num,size)
+    print(ans)
