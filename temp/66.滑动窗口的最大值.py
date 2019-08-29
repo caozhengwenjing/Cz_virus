@@ -8,19 +8,20 @@
 class Solution:
     def maxInWindows(self, num, size):
         # write code here
-        if size==0 or num==[]:
+        if size == 0 or num == []:
             return []
-        res=[]
-        for i in range(0,len(num)-size+1):
-            tempnum=[]
-            for j in range(i,i+size):
+        res = []
+        for i in range(0, len(num) - size + 1):
+            tempnum = []
+            for j in range(i, i + size):
                 tempnum.append(num[j])
             res.append(max(tempnum))
         return res
 
-if __name__=="__main__":
-    solution=Solution()
-    num=[2,3,4,2,6,2,5,1]
-    size=3
-    ans=solution.maxInWindows(num,size)
+
+if __name__ == "__main__":
+    solution = Solution()
+    num = [2, 3, 4, 2, 6, 2, 5, 1]
+    size = 3
+    ans = solution.maxInWindows(num, size)
     print(ans)
