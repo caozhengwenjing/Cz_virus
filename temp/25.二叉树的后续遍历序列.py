@@ -6,11 +6,6 @@
 
 # -*- coding:utf-8 -*-
 
-class Solutions:
-    def CVer(self, head):
-        if head is None and head.next is None:
-            return head
-
 
 class Solution:
     def VerifySquenceOfBST(self, sequence):
