@@ -27,13 +27,15 @@ def import_excel(excel):
         id = array['id']
 
         file_name = [name]
+        file_name1 = [id]
         # path = r'C:\Users\Administrator\Desktop\test\w'
 
         # 循环判断文件夹是否存在，不存在则自动创建
+      
         for name1 in file_name:
-            if not os.path.exists('C:/Users/Administrator/Desktop/test/%s' % (name1)):
-                os.mkdir(name1)
-
+            for id1 in file_name1:
+                if not os.path.exists('C:/Users/Administrator/Desktop/test/%s' % (name1 + id1)):
+                    os.mkdir(name1 + id1)
         # print (downloading with requests)
 
         url = zheng
