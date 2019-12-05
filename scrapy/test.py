@@ -11,6 +11,7 @@ tables = []
 
 def import_excel(excel):
     for rown in range(excel.nrows):
+        #
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
         array['name'] = table.cell_value(rown, 0)
         array['id'] = table.cell_value(rown, 1)
@@ -31,7 +32,6 @@ def import_excel(excel):
         # path = r'C:\Users\Administrator\Desktop\test\w'
 
         # 循环判断文件夹是否存在，不存在则自动创建
-
         for name1 in file_name:
             for id1 in file_name1:
                 if not os.path.exists('C:/Users/Administrator/Desktop/test/%s' % (name1 + id1)):
