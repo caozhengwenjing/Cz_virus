@@ -11,7 +11,7 @@ tables = []
 
 def import_excel(excel):
     for rown in range(excel.nrows):
-        #
+        #获取字段
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
         array['name'] = table.cell_value(rown, 0)
         array['id'] = table.cell_value(rown, 1)
