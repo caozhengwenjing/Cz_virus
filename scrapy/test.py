@@ -1,9 +1,12 @@
 import xlrd
 import requests
 import os
+print("请输入链接  格式为：C:/Users/Administrator/Desktop/闺蜜时代.xlsx")
+data = input()
+
 
 # 导入需要读取的第一个Excel表格的路径
-data1 = xlrd.open_workbook(r"C:\Users\Administrator\Desktop\test.xlsx")
+data1 = xlrd.open_workbook(data)
 table = data1.sheets()[0]
 # 创建一个空列表，存储Excel的数据
 tables = []
@@ -11,7 +14,6 @@ tables = []
 
 def import_excel(excel):
     for rown in range(excel.nrows):
-        #获取字段
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
         array['name'] = table.cell_value(rown, 0)
         array['id'] = table.cell_value(rown, 1)
@@ -29,30 +31,32 @@ def import_excel(excel):
 
         file_name = [name]
         file_name1 = [id]
-        # path = r'C:\Users\Administrator\Desktop\test\w'
 
-        # 循环判断文件夹是否存在，不存在则自动创建
+        path = r'C:\Users\Administrator\Desktop\unt\w'
+
         for name1 in file_name:
             for id1 in file_name1:
-                if not os.path.exists('C:/Users/Administrator/Desktop/test/%s' % (name1 + id1)):
-                    os.mkdir(name1 + id1)
+                if not os.path.exists('C:/Users/Administrator/Desktop/unt/%s' % (name1+id1)):
+                    os.mkdir(name1+id1)
+
+
+
+
         # print (downloading with requests)
 
-        url = zheng
-        url1 = fan
-        url2 = hetong
-        # 获取姓名
-        r = requests.get(url)
-        with open("C:/Users/Administrator/Desktop/test/%s/%s.jpg" % (name, name), "wb") as code:
-            code.write(r.content)
-        # 获取正面
-        r1 = requests.get(url1)
-        with open("C:/Users/Administrator/Desktop/test/%s/%s.jpg" % (name, name + str(1)), "wb") as code:
-            code.write(r1.content)
-        # 获取反面
-        r2 = requests.get(url2)
-        with open("C:/Users/Administrator/Desktop/test/%s/%s.pdf" % (name, name), "wb") as code:
-            code.write(r2.content)
+            url = zheng
+            url1 = fan
+            url2 = hetong
+            r = requests.get(url)
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name+id,name), "wb") as code:
+                code.write(r.content)
+            r1 = requests.get(url1)
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name+id,name+str(1)), "wb") as code:
+                code.write(r1.content)
+            r2 = requests.get(url2)
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name+id,name), "wb") as code:
+                code.write(r2.content)
+
 
 
 if __name__ == '__main__':
