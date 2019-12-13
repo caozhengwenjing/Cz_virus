@@ -1,9 +1,9 @@
 import xlrd
 import requests
 import os
+
 print("请输入链接  格式为：C:/Users/Administrator/Desktop/闺蜜时代.xlsx")
 data = input()
-
 
 # 导入需要读取的第一个Excel表格的路径
 data1 = xlrd.open_workbook(data)
@@ -36,27 +36,23 @@ def import_excel(excel):
 
         for name1 in file_name:
             for id1 in file_name1:
-                if not os.path.exists('C:/Users/Administrator/Desktop/unt/%s' % (name1+id1)):
-                    os.mkdir(name1+id1)
+                if not os.path.exists('C:/Users/Administrator/Desktop/unt/%s' % (name1 + id1)):
+                    os.mkdir(name1 + id1)
 
-
-
-
-        # print (downloading with requests)
+            # print (downloading with requests)
 
             url = zheng
             url1 = fan
             url2 = hetong
             r = requests.get(url)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name+id,name), "wb") as code:
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name), "wb") as code:
                 code.write(r.content)
             r1 = requests.get(url1)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name+id,name+str(1)), "wb") as code:
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name + str(1)), "wb") as code:
                 code.write(r1.content)
             r2 = requests.get(url2)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name+id,name), "wb") as code:
+            with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
                 code.write(r2.content)
-
 
 
 if __name__ == '__main__':
