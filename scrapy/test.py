@@ -26,8 +26,9 @@ def import_excel(excel):
         name = array['name']
         zheng = array['zheng']
         fan = array['fan']
-        hetong = array['hetong']
-        id = array['id']
+        hetong = array['hetong'][0:103]
+        ide = array['id'][12:15]
+        id = ide
 
         file_name = [name]
         file_name1 = [id]
@@ -44,15 +45,40 @@ def import_excel(excel):
             url = zheng
             url1 = fan
             url2 = hetong
-            r = requests.get(url)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name), "wb") as code:
-                code.write(r.content)
-            r1 = requests.get(url1)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name + str(1)), "wb") as code:
-                code.write(r1.content)
-            r2 = requests.get(url2)
-            with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
-                code.write(r2.content)
+
+            if url:
+                r = requests.get(url)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name), "wb") as code:
+                    code.write(r.content)
+
+            elif url1:
+                r1 = requests.get(url1)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name + str(1)), "wb") as code:
+                    code.write(r1.content)
+
+            else :
+                r2 = requests.get(url2)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
+                    code.write(r2.content)
+
+
+            # 反面
+            if url1:
+                r1 = requests.get(url1)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name + str(1)), "wb") as code:
+                    code.write(r1.content)
+            else:
+                r2 = requests.get(url2)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
+                    code.write(r2.content)
+
+            # 合同
+            if url2:
+                r2 = requests.get(url2)
+                with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
+                    code.write(r2.content)
+            else:
+                continue
 
 
 if __name__ == '__main__':
