@@ -11,4 +11,3 @@ if __name__ == '__main__':
     solution = Solution()
     ans = solution.replaceSpace(s)
     print(ans)
-
