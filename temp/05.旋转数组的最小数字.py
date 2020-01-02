@@ -15,7 +15,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    
     solution = Solution()
     rotateArray = list(map(int, input().split(',')))
     ans = solution.minNumberInRotateArray(rotateArray)
