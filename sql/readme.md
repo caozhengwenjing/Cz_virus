@@ -1,7 +1,10 @@
 ##当月总额
+```sql
 SELECT SUM(字段) 
 FROM 表名 
 WHERE DATE_FORMAT( 时间字段, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+
+```
 
 ##上月
 SELECT SUM(字段) 
