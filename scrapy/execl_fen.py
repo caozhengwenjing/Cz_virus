@@ -16,4 +16,4 @@ for department in department_list:
         if data["服务商"][i] == department:
             new_df = pd.concat([new_df, data.iloc[[i], :]], axis=0, ignore_index=True)
 
-    new_df.to_excel(str(department) + ".xlsx", sheet_name=department, index=False)  # 将每个销售部门存成一个新excel
+    new_df.to_excel(str(department) + ".xlsx", sheet_name=department, index=False)  # 将每个服务商存成一个新excel
