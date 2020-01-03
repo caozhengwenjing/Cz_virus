@@ -7,7 +7,7 @@ department_list = []
 for i in range(rows):
     temp = data["服务商"][i]
     if temp not in department_list:
-        department_list.append(temp)  # 将销售部门的分类存在一个列表中
+        department_list.append(temp)  # 将服务商的分类存在一个列表中
 
 for department in department_list:
     new_df = pd.DataFrame()
