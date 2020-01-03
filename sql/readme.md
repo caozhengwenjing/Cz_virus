@@ -15,10 +15,10 @@ FROM 表名
 WHERE  YEAR(时间字段)=YEAR(NOW()) 
 
 
-
-
-//去年发薪总额
-SELECT SUM(money) FROM xc_capital_success WHERE  YEAR(finish_time)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR)) AND TYPE = "薪酬代发"
+##去年总额
+SELECT SUM(字段) 
+FROM 表名 
+WHERE  YEAR(时间字段)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR))
 
 
 //当年每月数据
