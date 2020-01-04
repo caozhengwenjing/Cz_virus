@@ -5,6 +5,7 @@ import os
 print("请输入链接  格式为：C:/Users/Administrator/Desktop/闺蜜时代.xlsx")
 data = input()
 
+
 # 导入需要读取的第一个Excel表格的路径
 data1 = xlrd.open_workbook(data)
 table = data1.sheets()[0]
@@ -56,11 +57,10 @@ def import_excel(excel):
                 with open("C:/Users/Administrator/Desktop/unt/%s/%s.jpg" % (name + id, name + str(1)), "wb") as code:
                     code.write(r1.content)
 
-            else :
+            else:
                 r2 = requests.get(url2)
                 with open("C:/Users/Administrator/Desktop/unt/%s/%s.pdf" % (name + id, name), "wb") as code:
                     code.write(r2.content)
-
 
             # 反面
             if url1:
