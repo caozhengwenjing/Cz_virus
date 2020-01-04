@@ -13,6 +13,7 @@ tables = []
 
 
 def import_excel(excel):
+
     for rown in range(excel.nrows):
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
         array['name'] = table.cell_value(rown, 0)
