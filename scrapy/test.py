@@ -5,6 +5,7 @@ import os
 print("请输入链接  格式为：C:/Users/Administrator/Desktop/闺蜜时代.xlsx")
 data = input()
 
+
 # 导入需要读取的第一个Excel表格的路径
 data1 = xlrd.open_workbook(data)
 table = data1.sheets()[0]
