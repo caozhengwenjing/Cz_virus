@@ -1,4 +1,5 @@
 import taichi as ti
+import random
 
 quality = 1  # Use a larger value for higher-res simulations
 n_particles, n_grid = 9000 * quality ** 2, 128 * quality
@@ -83,7 +84,6 @@ def substep():
         x[p] += dt * v[p]  # advection
 
 
-import random
 
 group_size = n_particles // 3
 for i in range(n_particles):
