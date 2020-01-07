@@ -85,7 +85,6 @@ def substep():
         x[p] += dt * v[p]  # advection
 
 
-
 group_size = n_particles // 3
 for i in range(n_particles):
     x[i] = [random.random() * 0.2 + 0.3 + 0.10 * (i // group_size),
@@ -94,7 +93,6 @@ for i in range(n_particles):
     v[i] = [0, 0]
     F[i] = [[1, 0], [0, 1]]
     Jp[i] = 1
-
 
 gui = ti.GUI("Taichi MLS-MPM-99", res=512, background_color=0x112F41)
 for frame in range(20000):
