@@ -1,5 +1,6 @@
 import taichi as ti
 import random
+import numpy as np
 
 quality = 1  # Use a larger value for higher-res simulations
 n_particles, n_grid = 9000 * quality ** 2, 128 * quality
@@ -94,7 +95,6 @@ for i in range(n_particles):
     F[i] = [[1, 0], [0, 1]]
     Jp[i] = 1
 
-import numpy as np
 
 gui = ti.GUI("Taichi MLS-MPM-99", res=512, background_color=0x112F41)
 for frame in range(20000):
