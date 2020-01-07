@@ -81,6 +81,7 @@ def substep():
     v[p], C[p] = new_v, new_C
     x[p] += dt * v[p] # advection
 
+
 import random
 group_size = n_particles // 3
 for i in range(n_particles):
