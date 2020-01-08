@@ -14,7 +14,7 @@ WHERE DATE_FORMAT(时间字段, '%Y %m') = DATE_FORMAT(DATE_SUB(CURDATE(), INTER
 ```
 
 
-年总额
+## 年总额
 ```sql
 SELECT SUM(字段) 
 FROM 表名 
