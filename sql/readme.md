@@ -23,7 +23,7 @@ WHERE  YEAR(时间字段)=YEAR(NOW())
 ```
 
 
-去年总额
+## 去年总额
 ```sql
 SELECT SUM(字段) 
 FROM 表名 
