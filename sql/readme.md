@@ -41,7 +41,7 @@ GROUP BY DATE_FORMAT(时间字段, "%Y-%m")
 
 ```
 
-当月每日数据
+## 当月每日数据
 ```sql
 SELECT DATE_FORMAT(时间字段, "%m-%d") AS MONTH,SUM(money) AS totalmoney 
 FROM 表名
