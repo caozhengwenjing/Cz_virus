@@ -1,4 +1,4 @@
-当月总额
+#当月总额
 ```sql
 SELECT SUM(字段) 
 FROM 表名 
