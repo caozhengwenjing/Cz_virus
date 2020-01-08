@@ -6,7 +6,7 @@ WHERE DATE_FORMAT( 时间字段, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
 
 ```
 
-上月
+## 上月
 ```sql
 SELECT SUM(字段) 
 FROM 表名 
