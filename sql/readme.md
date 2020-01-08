@@ -32,7 +32,7 @@ WHERE  YEAR(时间字段)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR))
 ```
 
 
-当年每月数据
+## 当年每月数据
 ```sql
 SELECT DATE_FORMAT(时间字段, "%Y-%m")AS MONTH,SUM(money)AS totalmoney 
 FROM 表名
