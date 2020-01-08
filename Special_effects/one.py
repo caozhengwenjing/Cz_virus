@@ -22,6 +22,7 @@ grid_m = ti.var(dt=ti.f32, shape=(n_grid, n_grid))  # grid node mass
 ti.cfg.arch = ti.cuda  # Try to run on GPU
 
 
+
 @ti.kernel
 def substep():
     for i, j in ti.ndrange(n_grid, n_grid):
