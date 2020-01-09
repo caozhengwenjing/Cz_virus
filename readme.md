@@ -8,6 +8,7 @@ class Solution:
         return temp
 
 
+
 if __name__ == '__main__':
     s = 'We Are Happy'
     solution = Solution()
