@@ -22,7 +22,6 @@ class Solution:
         return l[::-1]
 
 
-
 if __name__ == '__main__':
     A1 = ListNode(1)
     A2 = ListNode(2)
