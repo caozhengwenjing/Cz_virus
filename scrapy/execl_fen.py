@@ -10,7 +10,6 @@ for i in range(rows):
         department_list.append(temp)  # 将服务商的分类存在一个列表中
 
 
-
 for department in department_list:
     new_df = pd.DataFrame()
 
