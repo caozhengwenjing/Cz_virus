@@ -2,6 +2,7 @@
 #
 # **题解：**ans[n]=ans[n-1]+ans[n-2]
 
+
 class Solution:
     def jumpFloor(self, number):
         # write code here
