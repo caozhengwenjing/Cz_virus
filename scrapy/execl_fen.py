@@ -4,6 +4,7 @@ data = pd.read_excel(r"C:\Users\Administrator\Desktop\杭州河象网络科技�
 rows = data.shape[0]  # 获取行数 shape[1]获取列数
 department_list = []
 
+
 for i in range(rows):
     temp = data["服务商"][i]
     if temp not in department_list:
