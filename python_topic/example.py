@@ -605,7 +605,6 @@ def tm025():
 '''
 
 
-
 def fac(x):
     if x > 1:
         return x * fac(x - 1)
