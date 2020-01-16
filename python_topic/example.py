@@ -611,7 +611,6 @@ def fac(x):
     else:
         return x
 
-
 def tm026():
     '''
     【个人备注】：按题目要求，公式f(n)=n*f(n-1)，递归调用求解。
