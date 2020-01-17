@@ -1,4 +1,4 @@
-# 含文件夹
+# 含文件夹（文件夹里的文件）
 
 import xlrd
 import requests
