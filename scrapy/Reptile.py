@@ -16,7 +16,6 @@ table = data1.sheets()[0]
 tables = []
 
 
-
 def import_excel(excel):
     for rown in range(excel.nrows):
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
