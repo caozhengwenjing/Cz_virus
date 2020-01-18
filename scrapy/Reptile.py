@@ -11,6 +11,7 @@ data = input()
 
 
 
+
 # 导入需要读取的第一个Excel表格的路径
 data1 = xlrd.open_workbook(data)
 table = data1.sheets()[0]
