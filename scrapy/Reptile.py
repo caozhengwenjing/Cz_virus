@@ -26,6 +26,7 @@ def import_excel(excel):
         array['zheng'] = table.cell_value(rown, 3)
         array['fan'] = table.cell_value(rown, 4)
         array['hetong'] = table.cell_value(rown, 5)
+        
         tables.append(array)
 
         # time.sleep(0.25)
