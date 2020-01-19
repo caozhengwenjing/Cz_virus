@@ -29,6 +29,7 @@ def import_excel(excel):
 
         tables.append(array)
 
+
         # time.sleep(0.25)
 
         name = array['name']
