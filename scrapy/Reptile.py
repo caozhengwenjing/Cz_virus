@@ -31,7 +31,6 @@ def import_excel(excel):
 
         # time.sleep(0.25)
 
-
         name = array['name']
         zheng = array['zheng']
         fan = array['fan']
