@@ -104,7 +104,6 @@ SELECT 字段,时间字段,id FROM 表名 WHERE DATE_SUB(CURDATE(), INTERVAL 14 
 ```
 
 
-
 ### 某年某月的数据
 ```sql
 SELECT 字段,时间字段,id FROM 表名   WHERE DATE_FORMAT(时间字段,'%Y-%m')='2019-10' AND order_state = 2
