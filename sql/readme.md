@@ -111,7 +111,6 @@ SELECT 字段,时间字段,id FROM 表名 WHERE DATE_FORMAT (时间字段,'%Y-%m
 ```
 
 
-
 ### 当前这周的数据
 ```sql
 SELECT 字段,时间字段,id FROM 表名 WHERE YEARWEEK(DATE_FORMAT(时间字段,'%Y-%m-%d')) = YEARWEEK(NOW()) 
