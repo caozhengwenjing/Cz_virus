@@ -67,7 +67,6 @@
          * [<a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的](#mysql的innodb引擎是如何实现mvcc的)
       * [6 MyISAM和InnoDB](#6-myisam和innodb)
    * [网络](#网络)
-   
       * [1 三次握手](#1-三次握手)
       * [2 四次挥手](#2-四次挥手)
       * [3 ARP协议](#3-arp协议)
