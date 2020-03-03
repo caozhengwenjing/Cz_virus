@@ -120,8 +120,6 @@
 <!-- markdown-toc end -->
 
 
-
-
 # Python语言特性
 
 ## 1 Python的函数参数传递
