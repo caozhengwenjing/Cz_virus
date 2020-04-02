@@ -39,7 +39,7 @@ for r in range(1, sheet.nrows):
     data_time1 = sheet.cell(r, 10).value
     print(data_time1)
     # data_time= xldate_as_tuple(data_time1,1).strftime('%Y-%m-%d')
-    data_time =xlrd.xldate.xldate_as_datetime(data_time1, 0)
+    data_time = xlrd.xldate.xldate_as_datetime(data_time1, 0)
     # data_time = datetime('%Y/%m/%d', localtime(data_time1))
     anchor = sheet.cell(r, 11).value
     week = sheet.cell(r, 12).value
