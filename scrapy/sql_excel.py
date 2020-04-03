@@ -6,13 +6,13 @@ import pymysql
 import xlwt
 
 con = pymysql.connect(
-        host='192.168.84.196',
-        user='root',
-        passwd='caozheng',
-        db='test',
-        port=3306,
-        charset='utf8'
-    )
+    host='192.168.84.196',
+    user='root',
+    passwd='caozheng',
+    db='test',
+    port=3306,
+    charset='utf8'
+)
 # 创建光标
 cursor = con.cursor()
 
