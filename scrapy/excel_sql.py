@@ -1,6 +1,4 @@
-from datetime import datetime
-from time import strftime, localtime
-from xlrd import xldate_as_tuple
+
 import xlrd
 import pymysql
 
