@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="province" onchange="func1(this)"></select>
+<select id="city"></select>
+<script>
+    data = {
+        '选择类目': [
+
+        ],
+        '生活': ['3C数码配件',
+            'MP3/MP4/iPod/录音笔',
+            'OTC药品/国际医药',
+            'ZIPPO/瑞士军刀/眼镜',
+            '个人护理/保健/按摩器材',
+            '互联网医疗/保健用品',
+            '住宅家具',
+            '办公设备/耗材/相关服务',
+            '医疗器械',
+            '厨房/烹饪用具',
+            '厨房电器',
+            '大家电',
+            '奶粉/辅食/营养品/零食',
+            '婴童尿裤',
+            '婴童用品',
+            '孕妇装/孕产妇用品/营养',
+            '家居饰品',
+            '家庭/个人清洁工具',
+            '家装灯饰光源',
+            '居家布艺',
+            '居家日用',
+            '影音电器',
+            '户外/登山/野营/旅行用品',
+            '手机',
+            '手表',
+            '收纳整理',
+            '文具电教/文化用品/商务用品',
+            '新车/二手车',
+            '智能设备',
+            '汽车用品/电子/清洗/改装',
+            '洗护清洁剂/卫生巾/纸/香薰',
+            '玩具/童车/益智/积木/模型',
+            '生活娱乐充值',
+            '生活电器',
+            '电子/电工',
+            '箱包皮具/热销女包/男包',
+            '美发护发/假发',
+            '购物提货券',
+            '运动/瑜伽/健身/球迷用品',
+            '隐形眼镜/护理液',
+            '餐饮具'],
+        '食品': ['传统滋补营养品',
+            '保健食品/膳食营养补充食品',
+            '其他',
+            '咖啡/麦片/冲饮',
+            '水产肉类/新鲜蔬果/熟食',
+            '粮油米面/南北干货/调味品',
+            '茶',
+            '酒类',
+            '零食/坚果/特产'],
+        '美妆': ['NULL',
+            '其他',
+            '彩妆/香水/美妆工具',
+            '美容护肤/美体/精油',
+            '美容美体仪器'],
+        '服饰': ['其他',
+            '女士内衣/男士内衣/家居服',
+            '女装/女士精品',
+            '女鞋',
+            '服饰配件/皮带/帽子/围巾',
+            '流行男鞋',
+            '珠宝/钻石/翡翠/黄金',
+            '男装',
+            '童装/婴儿装/亲子装',
+            '童鞋/婴儿鞋/亲子鞋',
+            '运动服/休闲服装',
+            '运动鞋new',
+            '饰品/流行首饰/时尚饰品新']
+    };
+    var pro = document.getElementById("province");      //找到省份的标签对象
+    var cit = document.getElementById("city");          //找到城市的标签对象
+
+    for (var k in data) {                              //遍历data数据 k是键 省份名
+        var opt = document.createElement("option");       //创建option的标签
+        pro.appendChild(opt);                           //添加创建的option标签到省份里
+        opt.innerHTML = k;                                 // 把k的键的文本 添加到标签内
+    }
+
+    function func1(ev) {
+        cit.options.length = 0;                           //这里使用了技巧 用options.length=0清空了每次点击后添加的option
+        for (var i in data[ev.value]) {                 // this.value是原来省份里的键值
+            var op = document.createElement("option");         //创建option的标签
+
+            cit.appendChild(op);                         //添加创建的option
+            op.innerHTML = data[ev.value][i];              // 注意: i不是键内数据的内容 是索引 不能直接=i
+        }
+    }
+
+</script>
+</body>
+</html>
