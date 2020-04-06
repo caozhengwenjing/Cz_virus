@@ -521,9 +521,11 @@ def tm022():
     jia = ['a', 'b', 'c']
     yi = ['x', 'y', 'z']
     arr = list(itertools.permutations(yi,
-                                      3))  # 面对甲队a,b,c时，乙队所有排列 [('x', 'y', 'z'), ('x', 'z', 'y'), ('y', 'x', 'z'), ('y', 'z', 'x'), ('z', 'x', 'y'), ('z', 'y', 'x')]
+                                      3))  # 面对甲队a,b,c时，乙队所有排列 [('x', 'y', 'z'), ('x', 'z', 'y'), \
+    # ('y', 'x', 'z'), ('y', 'z', 'x'), ('z', 'x', 'y'), ('z', 'y', 'x')]
     arr = [[jia[i] + a[i] for i in range(3)] for a in
-           arr]  # 将a,b,c写上，得到所有对阵组合 [['ax', 'by', 'cz'], ['ax', 'bz', 'cy'], ['ay', 'bx', 'cz'], ['ay', 'bz', 'cx'], ['az', 'bx', 'cy'], ['az', 'by', 'cx']]
+           arr]  # 将a,b,c写上，得到所有对阵组合 [['ax', 'by', 'cz'], ['ax', 'bz', 'cy'], ['ay', 'bx', 'cz'], \
+    # ['ay', 'bz', 'cx'], ['az', 'bx', 'cy'], ['az', 'by', 'cx']]
     for i in arr:
         if 'ax' in i:
             pass
