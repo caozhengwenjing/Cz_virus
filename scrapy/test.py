@@ -3,7 +3,6 @@
 import xlrd
 import requests
 import os
-
 print("请输入链接  格式为：C:/Users/Administrator/Desktop/闺蜜时代.xlsx")
 data = input()
 
