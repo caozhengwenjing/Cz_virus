@@ -13,6 +13,7 @@ table = data1.sheets()[0]
 # 创建一个空列表，存储Excel的数据
 tables = []
 
+
 def import_excel(excel):
     for rown in range(excel.nrows):
         array = {'name': '', 'id': '', 'gongsi': '', 'zheng': '', 'fan': '', 'hetong': ''}
