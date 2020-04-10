@@ -5,7 +5,6 @@ import pymysql
 # xlwt是python写入excel的包
 import xlwt
 
-
 con = pymysql.connect(
     host='192.168.84.196',
     user='root',
