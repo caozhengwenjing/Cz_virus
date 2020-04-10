@@ -16,7 +16,6 @@ con = pymysql.connect(
 )
 # 创建光标
 cursor = con.cursor()
-
 # execute执行一句查询语句
 sql = 'select * from zhubo202003_copy2'
 cursor.execute(sql)
