@@ -8,88 +8,87 @@
     </style>
 </head>
 <body>
-<input type="text" id="username">
-<input type="password" id="password">
-<button id="btn">按钮</button>
-<script>
-    var username = document.getElementById('username');
-    var password = document.getElementById('password');
-    var btn = document.getElementById('btn');
-    btn.onclick = function () {
-        //用户输入的内容
-        var uname = username.value;
-        var pwd = password.value;
-        //ajax 异步调用
-        btn.onclick = function () {
-            ajax({
-                type: "POST",
-                url: "http://localhost:",
-                port: 4003,
-                data: {uname: uname, pwd: pwd},
-                success: function (res) {
-                    alert(res);
-                },
-                error: function (err) {
-                    console.log(err);
+    <input type="text" id="username">
+    <input type="password" id="password">
+    <button id="btn">按钮</button>
+    <script>
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            //用户输入的内容
+            var uname = username.value;
+            var pwd = password.value;
+            //ajax 异步调用
+            btn.onclick = function(){
+                ajax({
+                    type:"POST",
+                    url:"http://localhost:",
+                    port:4003,
+                    data:{uname:uname,pwd:pwd},
+                    success: function(res){
+                        alert(res);
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                });
+            }
+            function ajax(ajaxObj){
+                if(window.XMLHttpRequest){
+                    var xhr = new XMLHttpRequest();
+                }else{
+                    var xhr = new ActiveXObject('Microsoft.XMLHTTP');
                 }
-            });
-        }
-        function ajax(ajaxObj) {
-            if (window.XMLHttpRequest) {
-                var xhr = new XMLHttpRequest();
-            } else {
-                var xhr = new ActiveXObject('Microsoft.XMLHTTP');
-            }
-            // jsonToStr(ajaxObj.data);
-            if (ajaxObj.type == 'GET') {
-                xhr.open(ajaxObj.type, ajaxObj.url + ajaxObj.port + '?' + jsonToStr(ajaxObj.data), true);
-                xhr.send();
-            } else if (ajaxObj.type == 'POST') {
-                xhr.open(ajaxObj.type, ajaxObj.url + ajaxObj.port, true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
-                xhr.send(jsonToStr(ajaxObj.data));
-            }
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        //返回成功
-                        //         var arr = JSON.parse(xhr.responseText);
-                        // if(vcode.value == createCode()){
-                        //     if(json.uname == uname && json.pwd == pwd){
-                        //         //对了,跳转
-                        //             window.location.href = './教师端.html?fx='+json.id;
-                        //     }else{
-                        //             alert('用户名或密码不正确');
-                        //     }
-                        if (ajaxObj.success) {
+                // jsonToStr(ajaxObj.data);
+                if(ajaxObj.type == 'GET'){
+                    xhr.open(ajaxObj.type,ajaxObj.url+ajaxObj.port+'?'+jsonToStr(ajaxObj.data),true);
+                    xhr.send();
+                }else if(ajaxObj.type == 'POST'){
+                    xhr.open(ajaxObj.type,ajaxObj.url+ajaxObj.port,true);
+                    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
+                    xhr.send(jsonToStr(ajaxObj.data));
+                }
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            //返回成功
+                    //         var arr = JSON.parse(xhr.responseText);
+                    // if(vcode.value == createCode()){
+                    //     if(json.uname == uname && json.pwd == pwd){
+                    //         //对了,跳转
+                    //             window.location.href = './教师端.html?fx='+json.id;
+                    //     }else{
+                    //             alert('用户名或密码不正确');
+                    //     }
+                        if(ajaxObj.success){
                             ajaxObj.success(xhr.responseText);
                         }
-                        // }else{
-                        //     alert('验证码错误');
-                        // }
-                    } else {
-                        //返回失败
-                        xhr.onerror(function (err) {
-                            if (ajaxObj.error) {
-                                ajaxObj.error(err);
-                            }
-                        })
+                    // }else{
+                    //     alert('验证码错误');
+                    // }
+                        }else{
+                            //返回失败
+                            xhr.onerror(function(err){
+                                if(ajaxObj.error){
+                                    ajaxObj.error(err);
+                                }
+                            })
+                        }
                     }
                 }
             }
-        }
-
-        function jsonToStr(dataJson) {
-            var arr = [];
-            for (var i in dataJson) {
-                // console.log(i);//属性名
-                // console.log(dataJson[i]);//属性值
-                arr.push(i + '=' + dataJson[i]);
+            function jsonToStr(dataJson){
+                var arr = [];
+                for(var i in dataJson){
+                    // console.log(i);//属性名
+                    // console.log(dataJson[i]);//属性值
+                    arr.push(i+'='+dataJson[i]);
+                }
+                // console.log(arr);
+                return arr.join('&');
             }
-            // console.log(arr);
-            return arr.join('&');
         }
-    }
-</script>
+    </script>
 </body>
 </html>
