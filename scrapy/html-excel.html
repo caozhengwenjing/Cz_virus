@@ -2,134 +2,137 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
-        <div class="tools">
-            <button type="button" class="btn green" id="excell" onclick="method5('dataTable')">导出格</button>
-        </div>
+<body>
+<div class="tools">
+    <button type="button" class="btn green" id="excell" onclick="method5('dataTable')">导出格</button>
+</div>
 
-        <table border="1" id="dataTable">
-            <thead>
-                            <tr>
-                                {#                                <th>排行</th>#}
-                                <th>商品名称</th>
-                                <th>所属店铺</th>
-                                <th>单价</th>
-                                <th>转化率(%)</th>
-                                <th>类目名称</th>
-                                <th>推荐分数</th>
-                                <th>日期</th>
-                                <th>主播</th>
+<table border="1" id="dataTable">
+    <thead>
+    <tr>
+        {#
+        <th>排行</th>
+        #}
+        <th>商品名称</th>
+        <th>所属店铺</th>
+        <th>单价</th>
+        <th>转化率(%)</th>
+        <th>类目名称</th>
+        <th>推荐分数</th>
+        <th>日期</th>
+        <th>主播</th>
 
-                            </tr>
-                            </thead>
-            <tbody>
-                            {% for foo in top11_l %}
-                                <tr>
-                                    {#                                    <td>{{ foo.8 }}</td>#}
-                                    <td>{{ foo.14 }}</td>
-                                    <td>{{ foo.13 }}</td>
-                                    <td>{{ foo.23 }}</td>
-                                    <td>{{ foo.1 }}</td>
-                                    <td>{{ foo.15 }}</td>
-                                    <td>{{ foo.27 }}</td>
-                                    <td>{{ foo.4 }}</td>
-                                    <td>{{ foo.3 }}</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for foo in top11_l %}
+    <tr>
+        {#
+        <td>{{ foo.8 }}</td>
+        #}
+        <td>{{ foo.14 }}</td>
+        <td>{{ foo.13 }}</td>
+        <td>{{ foo.23 }}</td>
+        <td>{{ foo.1 }}</td>
+        <td>{{ foo.15 }}</td>
+        <td>{{ foo.27 }}</td>
+        <td>{{ foo.4 }}</td>
+        <td>{{ foo.3 }}</td>
 
 
-                                </tr>
+    </tr>
 
-                            {% endfor %}
+    {% endfor %}
 
 
-                            </tbody>
-        </table>
+    </tbody>
+</table>
 
-    </body>
-    <script>
-        //打印表格
-        var idTmr;
+</body>
+<script>
+    //打印表格
+    var idTmr;
 
-        function getExplorer() {
-            var explorer = window.navigator.userAgent;
-            //ie
-            if(explorer.indexOf("MSIE") >= 0) {
-                return 'ie';
-            }
-            //firefox
-            else if(explorer.indexOf("Firefox") >= 0) {
-                return 'Firefox';
-            }
-            //Chrome
-            else if(explorer.indexOf("Chrome") >= 0) {
-                return 'Chrome';
-            }
-            //Opera
-            else if(explorer.indexOf("Opera") >= 0) {
-                return 'Opera';
-            }
-            //Safari
-            else if(explorer.indexOf("Safari") >= 0) {
-                return 'Safari';
-            }
+    function getExplorer() {
+        var explorer = window.navigator.userAgent;
+        //ie
+        if (explorer.indexOf("MSIE") >= 0) {
+            return 'ie';
         }
-
-        function method5(tableid) {
-            if(getExplorer() == 'ie') {
-                var curTbl = document.getElementById(tableid);
-                var oXL = new ActiveXObject("Excel.Application");
-                var oWB = oXL.Workbooks.Add();
-                var xlsheet = oWB.Worksheets(1);
-                var sel = document.body.createTextRange();
-                sel.moveToElementText(curTbl);
-                sel.select();
-                sel.execCommand("Copy");
-                xlsheet.Paste();
-                oXL.Visible = true;
-
-                try {
-                    var fname = oXL.Application.GetSaveAsFilename("Excel.xls",
-                        "Excel Spreadsheets (*.xls), *.xls");
-                } catch(e) {
-                    print("Nested catch caught " + e);
-                } finally {
-                    oWB.SaveAs(fname);
-                    oWB.Close(savechanges = false);
-                    oXL.Quit();
-                    oXL = null;
-                    idTmr = window.setInterval("Cleanup();", 1);
-                }
-
-            } else {
-                tableToExcel(tableid)
-            }
+        //firefox
+        else if (explorer.indexOf("Firefox") >= 0) {
+            return 'Firefox';
         }
-
-        function Cleanup() {
-            window.clearInterval(idTmr);
-            CollectGarbage();
+        //Chrome
+        else if (explorer.indexOf("Chrome") >= 0) {
+            return 'Chrome';
         }
-        var tableToExcel = (function() {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html><head><meta charset="UTF-8"></head><body><table  border="1">{table}</table></body></html>',
-                base64 = function(
-                    s) {
-                    return window.btoa(unescape(encodeURIComponent(s)))
-                },
-                format = function(s, c) {
-                    return s.replace(/{(\w+)}/g, function(m, p) {
-                        return c[p];
-                    })
-                }
-            return function(table, name) {
-                if(!table.nodeType)
-                    table = document.getElementById(table)
-                var ctx = {
-                    worksheet: name || 'Worksheet',
-                    table: table.innerHTML
-                }
-                window.location.href = uri + base64(format(template, ctx))
+        //Opera
+        else if (explorer.indexOf("Opera") >= 0) {
+            return 'Opera';
+        }
+        //Safari
+        else if (explorer.indexOf("Safari") >= 0) {
+            return 'Safari';
+        }
+    }
+
+    function method5(tableid) {
+        if (getExplorer() == 'ie') {
+            var curTbl = document.getElementById(tableid);
+            var oXL = new ActiveXObject("Excel.Application");
+            var oWB = oXL.Workbooks.Add();
+            var xlsheet = oWB.Worksheets(1);
+            var sel = document.body.createTextRange();
+            sel.moveToElementText(curTbl);
+            sel.select();
+            sel.execCommand("Copy");
+            xlsheet.Paste();
+            oXL.Visible = true;
+
+            try {
+                var fname = oXL.Application.GetSaveAsFilename("Excel.xls",
+                    "Excel Spreadsheets (*.xls), *.xls");
+            } catch (e) {
+                print("Nested catch caught " + e);
+            } finally {
+                oWB.SaveAs(fname);
+                oWB.Close(savechanges = false);
+                oXL.Quit();
+                oXL = null;
+                idTmr = window.setInterval("Cleanup();", 1);
             }
-        })()
-    </script>
+
+        } else {
+            tableToExcel(tableid)
+        }
+    }
+
+    function Cleanup() {
+        window.clearInterval(idTmr);
+        CollectGarbage();
+    }
+    var tableToExcel = (function () {
+        var uri = 'data:application/vnd.ms-excel;base64,',
+            template = '<html><head><meta charset="UTF-8"></head><body><table  border="1">{table}</table></body></html>',
+            base64 = function (s) {
+                return window.btoa(unescape(encodeURIComponent(s)))
+            },
+            format = function (s, c) {
+                return s.replace(/{(\w+)}/g, function (m, p) {
+                    return c[p];
+                })
+            }
+        return function (table, name) {
+            if (!table.nodeType)
+                table = document.getElementById(table)
+            var ctx = {
+                worksheet: name || 'Worksheet',
+                table: table.innerHTML
+            }
+            window.location.href = uri + base64(format(template, ctx))
+        }
+    })()
+</script>
 
 </html>
